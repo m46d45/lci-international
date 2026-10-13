@@ -1,4 +1,4 @@
-# LCI Community
+# LCI International
 
 Public site for national Lean Construction institutes in a light international framework.
 
