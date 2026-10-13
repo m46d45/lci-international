@@ -107,7 +107,7 @@ async function deliver(payload: ContactPayload): Promise<{ channel: string }> {
 }
 
 export const submitContact = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) => contactSchema.parse(data))
+  .validator((data: unknown) => contactSchema.parse(data))
   .handler(async ({ data }): Promise<{ ok: true; channel: string }> => {
     const channel = await deliver(data);
     return { ok: true, ...channel };
