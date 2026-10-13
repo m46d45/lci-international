@@ -1,6 +1,6 @@
 /** Shared site identity and navigation flags. */
 
-export const SITE_NAME = "LCI Community";
+export const SITE_NAME = "LCI International";
 export const SITE_TAGLINE = "Lean Construction institutes";
 export const SITE_DESCRIPTION =
   "National Lean Construction institutes in a light international framework.";
