@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { PresenceMap } from "@/components/presence-map";
 import { Button } from "@/components/ui/button";
-import { pageTitle } from "@/lib/site";
+import { SITE_DESCRIPTION, pageTitle } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -10,7 +10,7 @@ export const Route = createFileRoute("/")({
       { title: pageTitle() },
       {
         name: "description",
-        content: "A quarterly forum where national institutes share lessons and coordinate.",
+        content: SITE_DESCRIPTION,
       },
     ],
   }),

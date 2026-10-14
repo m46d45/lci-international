@@ -16,7 +16,7 @@ import {
   isProposalKind,
   type ProposalKind,
 } from "@/lib/proposals";
-import { pageTitle } from "@/lib/site";
+import { SITE_DESCRIPTION, pageTitle } from "@/lib/site";
 
 export const Route = createFileRoute("/contact")({
   validateSearch: (raw: Record<string, unknown>) => ({
@@ -29,8 +29,7 @@ export const Route = createFileRoute("/contact")({
       { title: pageTitle("Contact") },
       {
         name: "description",
-        content:
-          "Write to the coordinator, or suggest a change to the shared directory.",
+        content: SITE_DESCRIPTION,
       },
     ],
   }),

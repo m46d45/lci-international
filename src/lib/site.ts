@@ -3,7 +3,7 @@
 export const SITE_NAME = "LCI International";
 export const SITE_TAGLINE = "Lean Construction institutes";
 export const SITE_DESCRIPTION =
-  "National Lean Construction institutes in a light international framework.";
+  "Lean Construction institutes, working together across countries. A quarterly forum where national institutes share lessons and coordinate.";
 
 /** Hide from primary nav until shared work is agreed and listed. */
 export const SHOW_ACTIVITIES_IN_NAV = false;
