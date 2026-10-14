@@ -42,7 +42,11 @@ function Home() {
                 <ArrowRight className="size-4" />
               </Button>
             </Link>
-            <Link to="/contact" className="no-underline">
+            <Link
+              to="/contact"
+              search={{ kind: undefined, country: undefined }}
+              className="no-underline"
+            >
               <Button variant="outline">Contact</Button>
             </Link>
           </div>
