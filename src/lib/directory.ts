@@ -69,7 +69,7 @@ export function statusLabel(status: RowStatus): string {
     case "in-formation":
       return "In formation";
     case "gap":
-      return "Contact gap";
+      return "To be confirmed";
     case "incomplete":
       return "Incomplete";
     default:
