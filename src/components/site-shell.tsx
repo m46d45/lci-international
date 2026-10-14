@@ -16,9 +16,7 @@ const NAV: NavItem[] = [
   { to: "/about", label: "About" },
   { to: "/directory", label: "Parties" },
   { to: "/how-we-work", label: "How we work" },
-  ...(SHOW_ACTIVITIES_IN_NAV
-    ? [{ to: "/activities" as const, label: "Activities" }]
-    : []),
+  ...(SHOW_ACTIVITIES_IN_NAV ? [{ to: "/activities" as const, label: "Activities" }] : []),
   { to: "/contact", label: "Contact" },
 ];
 
@@ -44,9 +42,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
           >
             <Mark className="size-8 text-accent" />
             <span className="leading-tight">
-              <span className="block font-display text-lg font-medium">
-                {SITE_NAME}
-              </span>
+              <span className="block font-display text-lg font-medium">{SITE_NAME}</span>
               <span className="hidden text-xs tracking-widest text-muted uppercase sm:block">
                 {SITE_TAGLINE}
               </span>
@@ -55,10 +51,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
           <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
             {NAV.map((item) => {
-              const active =
-                item.to === "/"
-                  ? pathname === "/"
-                  : pathname.startsWith(item.to);
+              const active = item.to === "/" ? pathname === "/" : pathname.startsWith(item.to);
               return (
                 <Link
                   key={item.to}
@@ -89,10 +82,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
         </div>
 
         {open ? (
-          <nav
-            className="border-t border-line bg-surface px-4 py-3 lg:hidden"
-            aria-label="Mobile"
-          >
+          <nav className="border-t border-line bg-surface px-4 py-3 lg:hidden" aria-label="Mobile">
             <ul className="flex flex-col">
               {NAV.map((item) => (
                 <li key={item.to}>
@@ -115,14 +105,8 @@ export function SiteShell({ children }: { children: ReactNode }) {
       </div>
 
       <footer className="mt-16 border-t border-line bg-surface-2">
-        <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 sm:flex-row sm:items-start sm:justify-between sm:px-6">
-          <div>
-            <p className="font-display text-lg">{SITE_NAME}</p>
-            <p className="mt-2 max-w-sm text-sm text-muted">
-              National and regional Lean Construction institutes in a light
-              international framework.
-            </p>
-          </div>
+        <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+          <p className="font-display text-lg">{SITE_NAME}</p>
           <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm" aria-label="Footer">
             {NAV.filter((item) => item.to !== "/").map((item) => (
               <Link
