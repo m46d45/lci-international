@@ -12,7 +12,7 @@ import {
   type CountryRow,
   type Region,
 } from "@/lib/directory";
-import { pageTitle } from "@/lib/site";
+import { SITE_DESCRIPTION, pageTitle } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/directory")({
@@ -21,8 +21,7 @@ export const Route = createFileRoute("/directory")({
       { title: pageTitle("Parties") },
       {
         name: "description",
-        content:
-          "Countries, organisations, and regional networks in the shared Lean Construction directory.",
+        content: SITE_DESCRIPTION,
       },
     ],
   }),

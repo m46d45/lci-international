@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { pageTitle } from "@/lib/site";
+import { SITE_DESCRIPTION, pageTitle } from "@/lib/site";
 
 export const Route = createFileRoute("/how-we-work")({
   head: () => ({
@@ -7,7 +7,7 @@ export const Route = createFileRoute("/how-we-work")({
       { title: pageTitle("How we work") },
       {
         name: "description",
-        content: "Meet quarterly, recognise institutes, and share lessons from project work.",
+        content: SITE_DESCRIPTION,
       },
     ],
   }),
