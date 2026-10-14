@@ -181,6 +181,23 @@ function DirectoryPage() {
   );
 }
 
+function RepresentativeNames({ value }: { value: string }) {
+  const names = value
+    .split(";")
+    .map((name) => name.trim())
+    .filter(Boolean);
+  if (names.length < 2) return value;
+  return (
+    <span>
+      {names.map((name) => (
+        <span key={name} className="block">
+          {name}
+        </span>
+      ))}
+    </span>
+  );
+}
+
 function CountryTr({
   row,
   selected,
@@ -220,7 +237,7 @@ function CountryTr({
       </td>
       <td className="px-2 py-3 align-top sm:px-3">
         {row.representative ? (
-          row.representative
+          <RepresentativeNames value={row.representative} />
         ) : (
           <span className="text-faint">To be confirmed</span>
         )}
