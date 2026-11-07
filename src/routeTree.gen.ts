@@ -15,6 +15,7 @@ import { Route as ActivitiesRouteImport } from './routes/activities'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DirectoryRouteImport } from './routes/directory'
 import { Route as HowWeWorkRouteImport } from './routes/how-we-work'
+import { Route as ProposedActionsRouteImport } from './routes/proposed-actions'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -46,6 +47,11 @@ const HowWeWorkRoute = HowWeWorkRouteImport.update({
   path: '/how-we-work',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProposedActionsRoute = ProposedActionsRouteImport.update({
+  id: '/proposed-actions',
+  path: '/proposed-actions',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +60,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/directory': typeof DirectoryRoute
   '/how-we-work': typeof HowWeWorkRoute
+  '/proposed-actions': typeof ProposedActionsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +69,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/directory': typeof DirectoryRoute
   '/how-we-work': typeof HowWeWorkRoute
+  '/proposed-actions': typeof ProposedActionsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,14 +79,27 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/directory': typeof DirectoryRoute
   '/how-we-work': typeof HowWeWorkRoute
+  '/proposed-actions': typeof ProposedActionsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/about' | '/activities' | '/contact' | '/directory' | '/how-we-work'
+    | '/'
+    | '/about'
+    | '/activities'
+    | '/contact'
+    | '/directory'
+    | '/how-we-work'
+    | '/proposed-actions'
   fileRoutesByTo: FileRoutesByTo
   to:
-    '/' | '/about' | '/activities' | '/contact' | '/directory' | '/how-we-work'
+    | '/'
+    | '/about'
+    | '/activities'
+    | '/contact'
+    | '/directory'
+    | '/how-we-work'
+    | '/proposed-actions'
   id:
     | '__root__'
     | '/'
@@ -87,6 +108,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/directory'
     | '/how-we-work'
+    | '/proposed-actions'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -96,6 +118,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   DirectoryRoute: typeof DirectoryRoute
   HowWeWorkRoute: typeof HowWeWorkRoute
+  ProposedActionsRoute: typeof ProposedActionsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -142,6 +165,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HowWeWorkRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/proposed-actions': {
+      id: '/proposed-actions'
+      path: '/proposed-actions'
+      fullPath: '/proposed-actions'
+      preLoaderRoute: typeof ProposedActionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -152,6 +182,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   DirectoryRoute: DirectoryRoute,
   HowWeWorkRoute: HowWeWorkRoute,
+  ProposedActionsRoute: ProposedActionsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
